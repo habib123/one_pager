@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  patent_name: MyString
+  html_link: MyString
+  pdf_link: MyString
+  img_link: MyString
+  company_name: MyString
+  single_patent_num: MyString
+  type: 
+  mig_status: MyString
+  created_status: false
+  email_status: false
+  comments: MyText
+  date: 2013-10-19
+
+two:
+  user_id: 1
+  patent_name: MyString
+  html_link: MyString
+  pdf_link: MyString
+  img_link: MyString
+  company_name: MyString
+  single_patent_num: MyString
+  type: 
+  mig_status: MyString
+  created_status: false
+  email_status: false
+  comments: MyText
+  date: 2013-10-19
