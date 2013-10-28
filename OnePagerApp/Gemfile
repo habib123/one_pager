@@ -33,6 +33,15 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Use RSpec for testing
+gem'rspec-rails', '2.13.1'
+
+# Use Capybara for simulating user interaction
+gem 'capybara', '2.1.0'
+
+# Use gem for bootstrap
+gem 'bootstrap-sass', '2.3.2.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
