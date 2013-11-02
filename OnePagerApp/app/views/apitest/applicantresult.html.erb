@@ -1,0 +1,32 @@
+<h1> Applicant - API Test Case Result</h1>
+
+<fieldset>
+ <legend>Request data</legend>
+ <p>
+  <strong>Onepager Id : </strong>
+  <%= @applicant[:onepager_id] %>
+</p>
+<p>
+  <strong>Applicant title : </strong>
+  <%= @applicant[:applicant_title] %>
+</p>
+
+<p><strong>Tags : </strong>
+<%= @applicant[:tags]  %>
+</p>
+</fieldset>
+
+
+<fieldset>
+  <legend>Response data</legend>
+  <p>
+    <textarea cols="100" rows="4" name="responseresult">
+      <%= @res %>
+    </textarea>
+  </p>
+</fieldset>
+
+<p>
+<%= link_to 'Back to Applicant API test', '/apitest/applicant/' %> |
+<%= link_to 'Back to Main', '/apitest/' %>
+</p>
