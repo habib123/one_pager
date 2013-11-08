@@ -42,6 +42,9 @@ gem 'capybara', '2.1.0'
 # Use gem for bootstrap
 gem 'bootstrap-sass', '2.3.2.0'
 
+# Use Heroku gems
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
