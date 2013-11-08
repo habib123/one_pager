@@ -1,0 +1,26 @@
+<h1> Applicant - API Test Case </h1>
+
+<%= form_for :applicant do |f| %>
+    <p>
+      <%= f.label :onepagerId %><br>
+      <%= f.text_field :onepager_id %>
+    </p>
+
+    <p>
+      <%= f.label :applicant_title %><br>
+      <%= f.text_field :applicant_title %>
+    </p>
+
+    <p>
+      <%= f.label :tags %><br>
+      <%= f.text_field :tags %>
+    </p>
+
+    <p>
+      <%= f.submit 'Submit' %>
+    </p>
+<% end %>
+
+<p>
+  <%= link_to ' Back ', '/apitest/' %>
+</p>

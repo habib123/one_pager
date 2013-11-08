@@ -1,0 +1,32 @@
+<h1> Bulk - API Test Case Result</h1>
+
+<fieldset>
+ <legend>Request data</legend>
+ <p>
+  <strong>Onepager Id : </strong>
+  <%= @bulk[:onepager_id] %>
+</p>
+<p>
+  <strong>Patent numbers : </strong>
+  <%= @bulk[:patent_numbers] %>
+</p>
+
+<p><strong>Onepager name : </strong>
+<%= @bulk[:onepager_name]  %>
+</p>
+</fieldset>
+
+
+<fieldset>
+  <legend>Response data</legend>
+  <p>
+    <textarea cols="100" rows="4" name="responseresult">
+      <%= @res %>
+    </textarea>
+  </p>
+</fieldset>
+
+<p>
+<%= link_to 'Back to Bulk API test', '/apitest/bulk/' %> |
+<%= link_to 'Back to Main', '/apitest/' %>
+</p>

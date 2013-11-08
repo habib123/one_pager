@@ -1,0 +1,46 @@
+<h1>API Test Case</h1>
+
+<table border="1">
+  <tr>
+    <th style="width: 100px;">Name</th>
+    <th style="width: 200px;">Parameters</th>
+    <th style="width: 200px;">Return</th>
+    <th style="width: 200px;">Remarks</th>
+  </tr>
+  <tr>
+    <td><%= link_to 'Patent', '/apitest/patent/' %></td>
+    <td> onepager_id => String <br />
+         patent_num  => String <br />
+         onepager_name => String
+    </td>
+    <td>links => String</td>
+    <td>Return data format is json</td>
+  </tr>
+  <tr>
+    <td><%= link_to 'Applicant', '/apitest/applicant/' %></td>
+    <td> onepager_id => String <br />
+      applicant_title  => String <br />
+      tags => String
+    </td>
+    <td>links => String</td>
+    <td>Return data format is json</td>
+  </tr>
+  <tr>
+    <td><%= link_to 'Portfolio', '/apitest/portfolio/' %></td>
+    <td> onepager_id => String <br />
+      onepager_name => String <br />
+      patent_nums  => String
+    </td>
+    <td>links => String</td>
+    <td>Return data format is json</td>
+  </tr>
+  <tr>
+    <td><%= link_to 'Bulk', '/apitest/bulk/' %></td>
+    <td> onepager_id => String <br />
+      onepager_name  => String <br />
+      patent_nums => String
+    </td>
+    <td>links => String</td>
+    <td>Return data format is json</td>
+  </tr>
+</table>
