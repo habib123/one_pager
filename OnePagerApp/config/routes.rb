@@ -1,4 +1,5 @@
 OnePagerApp::Application.routes.draw do
+  get "one_pager/start"
   get "search/search"
   get "search/search_result"
   get "users/start"
