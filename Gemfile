@@ -59,3 +59,6 @@ gem 'rails_12factor', group: :production
 
 #use rest api client
 gem 'rest-client'
+
+#gem for postgresql for heroku
+gem  'pg'
