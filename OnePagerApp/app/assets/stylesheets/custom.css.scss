@@ -106,3 +106,40 @@ p {
   background-color: rgb(100,180,200);
 }
 /*progress menu style's end */
+
+/* Button Groups*/
+/*
+.btn-group-vertical {
+  display: block;
+}
+
+// Space out series of button groups
+.btn-group-vertical + .btn-group-vertical {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+// Float them, remove border radius, then re-add to first and last elements
+.btn-group-vertical .btn {
+  display: block;
+  width: 100%;
+  margin-top: -1px;
+  margin-bottom: 2px;
+  padding-top: 5px;
+
+
+}
+
+.btn:active {
+
+  background-color: #31347B;
+  border-color: #31347B;
+ }*/
+
+
+.btn-group-vertical .btn {
+  display: block;
+  width: 100%;
+
+}
