@@ -1,0 +1,32 @@
+<h1> Portfolio - API Test Case Result</h1>
+
+<fieldset>
+ <legend>Request data</legend>
+ <p>
+  <strong>Onepager Id : </strong>
+  <%= @portfolio[:onepager_id] %>
+</p>
+<p>
+  <strong>Patent number(s) : </strong>
+  <%= @portfolio[:patent_numbers] %>
+</p>
+
+<p><strong>Onepager name : </strong>
+<%= @portfolio[:onepager_name]  %>
+</p>
+</fieldset>
+
+
+<fieldset>
+  <legend>Response data</legend>
+  <p>
+    <textarea cols="100" rows="4" name="responseresult">
+      <%= @res %>
+    </textarea>
+  </p>
+</fieldset>
+
+<p>
+<%= link_to 'Back to Portfolio API test', '/apitest/portfolio/' %> |
+<%= link_to 'Back to Main', '/apitest/' %>
+</p>

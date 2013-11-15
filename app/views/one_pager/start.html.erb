@@ -1,0 +1,63 @@
+<div class="search-wrapper">
+	
+	<div class="progbar navbar">
+       <div class="navbar-inner" style="padding: 0;">
+         <div class="container" >
+           <ul class="nav" style="margin: 0; display: table; width: 100%;" >
+             <li class="active" ><a href="#">Step1: Select Report</a><div /></li>
+             <li ><a href="#">Step2: Introduce Information</a><div /></li>
+             <li ><a href="#">Step3: Results</a><div /></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+
+<p style="color: lightskyblue;">Please select the report you wish to generate</p>
+<div class="span2">
+	<div class="btn-group-vertical" data-toggle="buttons-radio">
+  <button id = "b1" type="button" class="btn btn-default" checked>Patent</button>
+  <button id = "b2" type="button" class="btn btn-default">Company Tags</button>
+  <button id = "b3" type="button" class="btn btn-default">Portfolio</button>
+  <button id = "b4" type="button" class="btn btn-default">Patent Bulk</button>
+</div>
+</div>
+<div class="span2">
+	<img id="descImg" src="/Crystal_Clear.png">
+</div>
+<div class="span4">
+	<p id="descText"> test test </p>
+</div>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+	$("#descImg").attr('src','/temp1.jpg');
+	$("#descText").text("Description for Patent");
+
+	$('#b1').click(function() {
+   		$("#descImg").attr('src','/temp1.jpg');
+   		$("#descText").text("Description for Patent");
+   });
+
+	$('#b2').click(function() {
+   		$("#descImg").attr('src','/temp2.jpg');
+   		$("#descText").text("Description for Company Tags");
+   });
+
+	$('#b3').click(function() {
+   		$("#descImg").attr('src','/temp3.jpg');
+   		$("#descText").text("Description for Portfolio");
+   });
+
+	$('#b4').click(function() {
+   		$("#descImg").attr('src','/temp4.jpg');
+   		$("#descText").text("Description for Patent Bulk");
+   });
+
+
+
+
+ });
+</script>
