@@ -1,7 +1,14 @@
 OnePagerApp::Application.routes.draw do
+  
   get "one_pager/start"
+  get "one_pager/patent"
+  get "one_pager/company_tags"
+  get "one_pager/portfolio"
+  get "one_pager/patent_bulk"
+
   get "search/search"
   get "search/search_result"
+
   get "users/start"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
