@@ -43,7 +43,7 @@ h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: margin-left;
   font-weight: normal;
   color: #999;
 }
@@ -51,6 +51,38 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+
+}
+
+input {
+  height: auto !important;
+
+}
+
+label {
+  display: inline-block;
+}
+
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
 }
 
 /*progress menu style's */

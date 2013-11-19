@@ -9,7 +9,10 @@ OnePagerApp::Application.routes.draw do
   get "search/search"
   get "search/search_result"
 
-  get "users/start"
+  resources :users
+  match '/signup',  to: 'users#new',  via: 'get'
+  match '/signin',  to: 'users#index',  via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
