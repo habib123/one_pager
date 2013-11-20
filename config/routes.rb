@@ -1,5 +1,6 @@
 OnePagerApp::Application.routes.draw do
   
+  resources :one_pagers
   get "one_pagers/start"
   get "one_pagers/patent"
   get "one_pagers/company_tags"

@@ -14,4 +14,9 @@ class OnePagersController < ApplicationController
 
 	def patent_bulk
 	end
+
+	def new
+		@one_pager = OnePager.new
+	end
+
 end
