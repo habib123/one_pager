@@ -1,10 +1,10 @@
 OnePagerApp::Application.routes.draw do
   
-  get "one_pager/start"
-  get "one_pager/patent"
-  get "one_pager/company_tags"
-  get "one_pager/portfolio"
-  get "one_pager/patent_bulk"
+  get "one_pagers/start"
+  get "one_pagers/patent"
+  get "one_pagers/company_tags"
+  get "one_pagers/portfolio"
+  get "one_pagers/patent_bulk"
 
   get "search/search"
   get "search/search_result"
