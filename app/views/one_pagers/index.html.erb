@@ -29,8 +29,8 @@
   <div class="span4">
   	<p id="descText"> test test </p>
   </div>
-</div>
-  <a id="linkToType" href="/one_pagers/patent"><p align="right">Continue to step number 2</p></a>
+</div align="right">
+  <%= link_to 'Continue to step number 2' , '/one_pagers/new?report=patent',id:"linkToType" %>
 </div>
 
 
@@ -39,30 +39,30 @@
 $(document).ready(function() {
 
 	$("#descImg").attr('src','/temp1.jpg');
-  $("#linkToType").attr('href','/one_pagers/patent');
+  $("#linkToType").attr('href','/one_pagers/new?report=patent');
 	$("#descText").text("Description for Patent");
 
 	$('#b1').click(function() {
    		$("#descImg").attr('src','/temp1.jpg');
-      $("#linkToType").attr('href','/one_pagers/patent');
+      $("#linkToType").attr('href','/one_pagers/new?report=patent');
    		$("#descText").text("Description for Patent");
    });
 
 	$('#b2').click(function() {
    		$("#descImg").attr('src','/temp2.jpg');
-      $("#linkToType").attr('href','/one_pagers/company_tags');
+      $("#linkToType").attr('href','/one_pagers/new?report=company_tags');
    		$("#descText").text("Description for Company Tags");
    });
 
 	$('#b3').click(function() {
    		$("#descImg").attr('src','/temp3.jpg');
-      $("#linkToType").attr('href','/one_pagers/portfolio');
+      $("#linkToType").attr('href','/one_pagers/new?report=portfolio');
    		$("#descText").text("Description for Portfolio");
    });
 
 	$('#b4').click(function() {
    		$("#descImg").attr('src','/temp4.jpg');
-      $("#linkToType").attr('href','/one_pagers/patent_bulk');
+      $("#linkToType").attr('href','/one_pagers/new?report=patent_bulk');
    		$("#descText").text("Description for Patent Bulk");
    });
 

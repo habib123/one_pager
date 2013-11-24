@@ -1,3 +1,31 @@
 // Place all the styles related to the OnePagers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.one_pagers-wrapper{
+  width: 700px;
+  margin: 0 auto;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 50%;
+  margin-bottom: 15px;
+
+}
+
+input {
+  	height:20px;
+    width:220px;
+    padding:5px 8px;
+}
+
+label {
+ 	width:150px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
