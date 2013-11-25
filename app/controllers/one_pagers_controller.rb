@@ -5,8 +5,7 @@ class OnePagersController < ApplicationController
 
 		@partial = params[:report]
 		if @partial == "patent"
-			@one_pager.patent_name = "My Report"
-			@one_pager.single_patent_num = "US 6128685 A"
+			# Might be removed
 		else
 			# Pending for the rest types of one pagers
 		end

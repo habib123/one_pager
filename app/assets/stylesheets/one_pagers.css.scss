@@ -7,6 +7,17 @@
   margin: 0 auto;
 }
 
+.helpMessage {
+  display:none;
+  position:absolute;
+  border:1px solid #333;
+  background-color:#161616;
+  border-radius:10px;
+  padding:5px;
+  color:#fff;
+  font-size:6px Arial;
+}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
