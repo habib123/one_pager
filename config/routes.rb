@@ -8,6 +8,12 @@ OnePagerApp::Application.routes.draw do
   resources :users
   match '/signup',  to: 'users#new',  via: 'get'
   match '/signin',  to: 'users#index',  via: 'get'
+  
+  resources :apitest
+  post 'apitest/patent', to: 'apitest#patent'
+  post 'apitest/applicant', to: 'apitest#applicant'
+  post 'apitest/portfolio', to: 'apitest#portfolio'
+  post 'apitest/bulk', to: 'apitest#bulk'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
