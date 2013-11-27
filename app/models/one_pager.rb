@@ -1,21 +1,9 @@
 class OnePager < ActiveRecord::Base
+	validates :patent_name, presence: true
+	validates :single_patent_num, presence: true
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
 
-	def email
-		puts "email getter called"
-		#@user = AnonymousUser.find(OnePager.find_by_user_id(self.user_id))
-		#@user.email
-	end
+	attr_accessor :email
 
-	def email=(newEmail)
-		puts "email setter called"
-		@user = AnonymousUser.find_by_email(newEmail)
-		if @user.nil?
-			puts "new User found"
-			@user = AnonymousUser.new(email: @newEmail)
-			@user.counter = 0
-			@user.save
-		else
-			puts "Existing User"
-		end
-	end
 end
