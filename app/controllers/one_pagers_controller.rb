@@ -1,23 +1,34 @@
 class OnePagersController < ApplicationController
 
 	def new
+		puts "new start"
 		@one_pager = OnePager.new
 
-		@partial = params[:report]
-		if @partial == "patent"
+		@type = params[:report]
+		if @type == "patent"
 			# Might be removed
 		else
 			# Pending for the rest types of one pagers
 		end
-		if @partial.nil?
+		if @type.nil?
 			render 'index'
 		end
+		puts "new end"
 	end
 
 	def create
 		puts "Create started"
 		@one_pager = OnePager.new(one_pager_params)
-		@one_pager.save
+		puts "bef"
+		puts @one_pager.email
+		puts "aft"
+		if @one_pager.save
+			# TODO : Success
+		else
+			# TODO : Fail
+			@type = "patent"
+			render 'new', {:type => @type}
+		end
 	end
 
 	private
