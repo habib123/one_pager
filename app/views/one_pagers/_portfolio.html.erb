@@ -1,3 +1,4 @@
+<p style="color: lightskyblue;">Please indicate all the necessary information to generate a portfolio report</p>
 <div class="row">
   <div class="span6">
     <%= form_for(@one_pager) do |f| %>
@@ -17,11 +18,12 @@
       		<%= f.text_field :email,:placeholder => "email@example.com" , :class => "masterTooltip" , 
                           :title => "Please introduce your e-mail for us to send the links to download the report" %>
 
-            <%= f.hidden_field :type, :value => "portfolio"%>
+
 
   		<% end %>
 
-  		
+  		<%= f.hidden_field :type, :value => "portfolio"%>
+
      	<%= f.submit "Continue to step 3", class: "btn btn-primary"  %>
     <% end %>
 
