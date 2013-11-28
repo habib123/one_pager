@@ -18,7 +18,16 @@ class OnePagersController < ApplicationController
 
 	def create
 		puts "Create started"
-		@one_pager = OnePager.new(one_pager_params)
+		if type_param[:type] == "patent"
+
+		elsif type_param[:type] == "portfolio"
+
+		elsif type_param[:type] == "patent_bulk"
+			
+		elsif type_param[:type] == "company_tags"
+			
+		end
+		#@one_pager = OnePager.new(one_pager_params)
 		puts "bef"
 		puts @one_pager.email
 		puts "aft"
@@ -35,6 +44,10 @@ class OnePagersController < ApplicationController
 
 		def one_pager_params
 			params.require(:one_pager).permit(:patent_name, :single_patent_num, :email)
+		end
+
+		def type_param
+			params.require(:one_pager).permit(:type)
 		end
 
 end
