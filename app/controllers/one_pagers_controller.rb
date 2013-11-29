@@ -18,7 +18,7 @@ class OnePagersController < ApplicationController
 
 	def create
 		puts "Create started"
-		if type_param[:type] == "patent"
+		if type_param[:report_type] == "patent"
 			puts "one_pager is patent"
 			@one_pager = OnePager.new(one_pager_patent_params)
 			if @one_pager.save
@@ -30,7 +30,7 @@ class OnePagersController < ApplicationController
 				@type = "patent"
 				render 'new', {:type => @type}
 			end
-		elsif type_param[:type] == "portfolio"
+		elsif type_param[:report_type] == "portfolio"
 			puts "one_pager is portfolio"
 			@one_pager = OnePager.new(one_pager_portfolio_params)
 			if @one_pager.save
@@ -42,7 +42,7 @@ class OnePagersController < ApplicationController
 				@type = "portfolio"
 				render 'new', {:type => @type}
 			end
-		elsif type_param[:type] == "patent_bulk"
+		elsif type_param[:report_type] == "patent_bulk"
 			puts "one_pager is patent_bulk"
 			@one_pager = OnePager.new(one_pager_patent_bulk_params)
 			if @one_pager.save
@@ -54,7 +54,7 @@ class OnePagersController < ApplicationController
 				@type = "patent_bulk"
 				render 'new', {:type => @type}
 			end			
-		elsif type_param[:type] == "company_tags"
+		elsif type_param[:report_type] == "company_tags"
 			
 		end
 	end
@@ -62,19 +62,19 @@ class OnePagersController < ApplicationController
 	private
 
 		def one_pager_patent_params
-			params.require(:one_pager).permit(:patent_name, :single_patent_num, :email)
+			params.require(:one_pager).permit(:patent_name, :single_patent_num, :email, :report_type)
 		end
 
 		def one_pager_portfolio_params
-			params.require(:one_pager).permit(:patent_name, :patent_list, :email)
+			params.require(:one_pager).permit(:patent_name, :patent_list, :email, :report_type)
 		end
 
 		def one_pager_patent_bulk_params
-			params.require(:one_pager).permit(:patent_name, :patent_list, :email)
+			params.require(:one_pager).permit(:patent_name, :patent_list, :email, :report_type)
 		end		
 
 		def type_param
-			params.require(:one_pager).permit(:type)
+			params.require(:one_pager).permit(:report_type)
 		end
 
 end
