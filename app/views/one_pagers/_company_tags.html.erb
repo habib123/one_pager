@@ -1,3 +1,62 @@
-<div class="company_tags-wrapper">
-	<p>Find me in app/views/one_pager/company_tags.html.erb</p>
+<p style="color: lightskyblue;">Please indicate all the necessary information</p>
+<div class="row">
+  <div class="span6">
+    <%= form_for(@one_pager) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+    	<%= f.label :'Report name: ' %>
+  		<%= f.text_field :patent_name, :placeholder => "My Report" ,:class => "masterTooltip" , 
+                          :title => "Provide the name for your report" %>
+
+    	<%= f.label :'Company name: ' %>
+  		<%= f.text_field :company_name, :placeholder => "Apple Inc." ,:class => "masterTooltip" , 
+                          :title => "Provide the name of the company" %>                          
+
+  		<%= f.label :'Company Tags (comma separated):' %>
+  		<%= f.text_area :tags_list, :placeholder => "Mac , iPad" ,:class => "masterTooltip" , 
+                          :title => "Provide the patent numbers for the one pager , each in one row separated with comma" %>
+
+  		<% if !signed_in? %>
+
+      		<%= f.label :'Your e-mail: ' %>
+      		<%= f.text_field :email,:placeholder => "email@example.com" , :class => "masterTooltip" , 
+                          :title => "Please introduce your e-mail for us to send the links to download the report" %>
+
+
+
+  		<% end %>
+
+  		<%= f.hidden_field :report_type, :value => "company_tags"%>
+
+     	<%= f.submit "Continue to step 3", class: "btn btn-primary"  %>
+    <% end %>
+
+    
+  </div>
 </div>
+  
+<script type="text/javascript">
+$(document).ready(function() {
+
+// Tooltip only Text
+$('.masterTooltip').hover(function(){
+        // Hover over code
+        var title = $(this).attr('title');
+        $("#descText").text(title);
+        $(this).data('tipText', title).removeAttr('title');
+        $('<h5 class="helpMessage"></h5>')
+        .text(title)
+        .appendTo('body')
+        .fadeIn('slow');
+}, function() {
+        // Hover out code
+        $(this).attr('title', $(this).data('tipText'));
+        $('.helpMessage').remove();
+}).mousemove(function(e) {
+        var mousex = e.pageX + 20; //Get X coordinates
+        var mousey = e.pageY + 10; //Get Y coordinates
+        $('.helpMessage')
+        .css({ top: mousey, left: mousex })
+});
+});
+</script>

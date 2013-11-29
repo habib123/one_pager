@@ -55,7 +55,17 @@ class OnePagersController < ApplicationController
 				render 'new', {:type => @type}
 			end			
 		elsif type_param[:report_type] == "company_tags"
-			
+			puts "one_pager is company_tags"
+			@one_pager = OnePager.new(one_pager_company_tags_params)
+			if @one_pager.save
+				puts "one_pager saved"
+				# TODO : Success
+			else
+				puts "Cannot save one pager"
+				# TODO : Fail
+				@type = "company_tags"
+				render 'new', {:type => @type}
+			end					
 		end
 	end
 
@@ -72,6 +82,10 @@ class OnePagersController < ApplicationController
 		def one_pager_patent_bulk_params
 			params.require(:one_pager).permit(:patent_name, :patent_list, :email, :report_type)
 		end		
+
+		def one_pager_company_tags_params
+			params.require(:one_pager).permit(:patent_name, :company_name, :tags_list, :email, :report_type)
+		end
 
 		def type_param
 			params.require(:one_pager).permit(:report_type)

@@ -8,9 +8,9 @@
   		<%= f.text_field :patent_name, :placeholder => "My Portfolio" ,:class => "masterTooltip" , 
                           :title => "Provide the name for your report" %>
 
-  		<%= f.label :'Patent numbers (one per row):' %>
-  		<%= f.text_area :patent_list, :placeholder => "US 6128685 A" ,:class => "masterTooltip" , 
-                          :title => "Provide the patent numbers for the one pager , each in one row" %>
+  		<%= f.label :'Patent numbers (comma separated):' %>
+  		<%= f.text_area :patent_list, :placeholder => "US6174724B1, US20010002490A1" ,:class => "masterTooltip" , 
+                          :title => "Provide the patent numbers for the one pager separated with comma" %>
 
   		<% if !signed_in? %>
 
