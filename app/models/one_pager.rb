@@ -1,4 +1,10 @@
 class OnePager < ActiveRecord::Base
+  has_and_belongs_to_many :one_pagers_tags
+  has_one :one_pagers_patent_num
+  belongs_to :mig_users
+  belongs_to :users
+  belongs_to :user_favorites
+  
 	validates :patent_name, presence: true
 
 	validates :single_patent_num, presence: true, :if => :should_validate_single_patent_num?

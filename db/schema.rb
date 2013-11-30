@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019142510) do
+ActiveRecord::Schema.define(version: 20131130194809) do
 
   create_table "anonymous_users", force: true do |t|
     t.string   "email",      limit: 30
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 20131019142510) do
   end
 
   create_table "user_favorites", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "one_pager_id"
+    t.integer  "userId"
+    t.integer  "onePagerId"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
