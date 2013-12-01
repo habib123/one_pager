@@ -11,7 +11,8 @@ class OnePager < ActiveRecord::Base
 
 	validates :company_name, presence: true, :if => :should_validate_company_name?
 
-	VALID_COMPANY_TAGS_LIST_REGEX = /(?:| , )([^,\s][^\,]*[^,\s]*)/
+	#VALID_COMPANY_TAGS_LIST_REGEX = /(?:| , )([^,\s][^\,]*[^,\s]*)/
+	VALID_COMPANY_TAGS_LIST_REGEX = /\A(?:(?:\A|,|\s*)([A-Za-z0-9]+)\b)+?\z/
 	validates :tags_list, presence: true, :if => :should_validate_tags_list? , format: { with: VALID_COMPANY_TAGS_LIST_REGEX }
 	
 	VALID_PATENT_LIST_REGEX = /\A(?:(?:\A|,|\s*)([A-Z]{2}(?:\d{7}|\d{11})[A-Z]\d)\b)+?\z/
