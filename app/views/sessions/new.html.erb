@@ -16,14 +16,14 @@
                   <div class="alert alert-<%= key %>"><%= value %></div>
               <% end %>
               <p>
-                 <%= f.label :email %></br>
+                 <%= f.label :email %>
                  <%= f.text_field :email %>
                </p>
                <p>
-                 <%= f.label :password %></br>
+                 <%= f.label :password %>
                  <span><%= f.password_field :password %></span>
                </p>
-               <p><input type="checkbox" name="remember_me" class="remember_me"> Remember me</p>
+               <p><input type="checkbox" name="remember_me" class="remember_me">  Remember me</p>
                 <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
             <% end %>
         </div>

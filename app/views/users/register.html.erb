@@ -14,15 +14,15 @@
             <%= form_for :user, url: users_path do |f| %>
               <%= render 'error_messages' %>
                <p>
-                 <%= f.label :email %></br>
+                 <%= f.label :email %>
                  <%= f.text_field :email %>
                </p>
                <p>
-                 <%= f.label :password %></br>
+                 <%= f.label :password %>
                  <span><%= f.password_field :password %></span>
                </p>
                <p>
-                 <%= f.label :password_confirmation, "Confirm Password" %></br>
+                 <%= f.label :password_confirmation, "Confirm Password" %>
                  <%= f.password_field :password_confirmation %>
                </p>
                   <%= f.submit "Create Account", class: "btn btn-large btn-primary" %>
