@@ -22,7 +22,9 @@
       		<%= f.text_field :email,:placeholder => "email@example.com" , :class => "masterTooltip" , 
                           :title => "Please introduce your e-mail for us to send the links to download the report" %>
 
+      <% else %>
 
+      <%= f.hidden_field :email, :value => current_user.email %>      
 
   		<% end %>
 

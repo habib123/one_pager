@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20131130194850) do
 
   create_table "users", force: true do |t|
     t.string   "email"
-    t.string   "password_digest",   limit: 16
+    t.string   "password_digest"
     t.boolean  "confirmed"
     t.boolean  "one_pager_allowed"
     t.boolean  "blocked"
@@ -77,6 +77,6 @@ ActiveRecord::Schema.define(version: 20131130194850) do
     t.string   "remember_token"
   end
 
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

@@ -4,10 +4,12 @@ class OnePager < ActiveRecord::Base
   belongs_to :mig_users
   belongs_to :users
   belongs_to :user_favorites
-  
+	
 	validates :patent_name, presence: true
 
-	validates :single_patent_num, presence: true, :if => :should_validate_single_patent_num?
+	VALID_SINGLE_PATENT_NUM_REGEX = /\A(?:([A-Z]{2}(?:\d{7}|\d{11})[A-Z]\d))\z/
+
+	validates :single_patent_num, presence: true, :if => :should_validate_single_patent_num? , format: { with: VALID_SINGLE_PATENT_NUM_REGEX }
 
 	validates :company_name, presence: true, :if => :should_validate_company_name?
 

@@ -12,15 +12,17 @@
   		<%= f.text_area :patent_list, :placeholder => "US6174724B1, US20010002490A1" ,:class => "masterTooltip" , 
                           :title => "Provide the patent numbers for the one pager separated with comma" %>
 
-  		<% if !signed_in? %>
+      <% if !signed_in? %>
 
-      		<%= f.label :'Your e-mail: ' %>
-      		<%= f.text_field :email,:placeholder => "email@example.com" , :class => "masterTooltip" , 
+          <%= f.label :'Your e-mail: ' %>
+          <%= f.text_field :email,:placeholder => "email@example.com" , :class => "masterTooltip" , 
                           :title => "Please introduce your e-mail for us to send the links to download the report" %>
 
+      <% else %>
 
+      <%= f.hidden_field :email, :value => current_user.email %>      
 
-  		<% end %>
+      <% end %>
 
   		<%= f.hidden_field :report_type, :value => "portfolio"%>
 
