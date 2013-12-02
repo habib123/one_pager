@@ -1,0 +1,33 @@
+<div class="user-layout">
+  <div>
+    <span class="topmenu">Try it out!</span>
+    <span class="topmenu highlight">Registered User</span>
+  </div>
+  <div class="body-part">
+    <div class="title-top">
+        <span class="title"> Create Account </span>
+    </div>
+    <div class="middle-part">
+        <p>If you are a registered user, <a href="/signin"> click here </a></p>
+
+        <div class="form-part">
+            <%= form_for :user, url: users_path do |f| %>
+              <%= render 'error_messages' %>
+               <p>
+                 <%= f.label :email %></br>
+                 <%= f.text_field :email %>
+               </p>
+               <p>
+                 <%= f.label :password %></br>
+                 <span><%= f.password_field :password %></span>
+               </p>
+               <p>
+                 <%= f.label :password_confirmation, "Confirm Password" %></br>
+                 <%= f.password_field :password_confirmation %>
+               </p>
+                  <%= f.submit "Create Account", class: "btn btn-large btn-primary" %>
+            <% end %>
+        </div>
+    </div>
+  </div>
+</div>

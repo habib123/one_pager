@@ -5,10 +5,24 @@ OnePagerApp::Application.routes.draw do
   get "search/search"
   get "search/search_result"
 
-  resources :users
-  match '/signup',  to: 'users#new',  via: 'get'
-  match '/signin',  to: 'users#index',  via: 'get'
+  # Moinul backup-2-12-2013 
+  #resources :users
+  #match '/signup',  to: 'users#new',  via: 'get'
+  #match '/signin',  to: 'users#index',  via: 'get'
   
+  # Moinul added user controller related route -2-12-2013
+  get 'users/start'
+  get 'users/register'
+  get 'users/registered'
+  get 'users/profile'
+
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signin',  to: 'sessions#new',     via: 'get'
+  match '/signup',  to: 'users#register',   via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+  
+  # Moinul added APItest controller related route -27-11-2013
   resources :apitest
   post 'apitest/patent', to: 'apitest#patent'
   post 'apitest/applicant', to: 'apitest#applicant'

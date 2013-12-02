@@ -1,0 +1,23 @@
+<div class="index-user-wrapper">
+	<h2>If you wish to create an account <br> <%= link_to "Click Here", signup_path %></h2>
+	<div class="row">
+	    <div class="span6 offset3">
+	      <%= form_for@user do |f| %>
+
+	        <%= f.label :email %>
+	        <%= f.text_field :email %>
+
+	        <%= f.label :password %>
+	        <%= f.password_field :password %>
+	        
+	        <%= label_tag :remember_me %>
+    		<%= check_box_tag :remember_me, 1, params[:remember_me] %>
+    		<br>
+
+	        <%= f.submit "Sign in", class: "btn btn-primary" %>
+	      <% end %>
+
+	      
+	    </div>
+  </div>
+</div>

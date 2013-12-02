@@ -1,23 +1,18 @@
-<div class="index-user-wrapper">
-	<h2>If you wish to create an account <br> <%= link_to "Click Here", signup_path %></h2>
-	<div class="row">
-	    <div class="span6 offset3">
-	      <%= form_for@user do |f| %>
+<h1>Users#Index</h1>
+<p>Here goes User Index page. Find me in app/views/users/index.html.erb</p>
 
-	        <%= f.label :email %>
-	        <%= f.text_field :email %>
+<p>Hints: Is user signed in?</p>
 
-	        <%= f.label :password %>
-	        <%= f.password_field :password %>
-	        
-	        <%= label_tag :remember_me %>
-    		<%= check_box_tag :remember_me, 1, params[:remember_me] %>
-    		<br>
+<% if signed_in? %>
+   <p> - Yes, <%=@current_user.email%> is signed in.</p>
+   <p> - All information of logged in user: </p>
+    <pre><%= @current_user.to_json(:only => [:email, :id, :confirmed, :blocked, :remember_token]) %></pre>
+<% else %>
+    - No, user is not signed in.
+<% end %>
 
-	        <%= f.submit "Sign in", class: "btn btn-primary" %>
-	      <% end %>
+<p>For login <a href="/signin">click here</a></p>
 
-	      
-	    </div>
-  </div>
-</div>
+<p>For Register <a href="/signup">click here</a></p>
+
+<p>And logged in user <%= link_to "click here", signout_path, method: "delete" %> for logout.</p>

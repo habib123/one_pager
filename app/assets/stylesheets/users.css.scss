@@ -1,3 +1,99 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'bootstrap';
+
+/* layout */
+.user-layout{
+  width: 80%;
+  margin: 30px 50px;
+}
+
+.topmenu{
+  padding: 5px 15px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.highlight{
+  background-color: #e8e8e8;
+}
+
+.body-part{
+  background-color: #e8e8e8;
+  padding: 30px 20px 40px;
+}
+.title-top{
+  padding-bottom: 30px;
+}
+
+.title{
+  padding: 5px 15px;
+  background-color: #97BFD7;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.middle-part{
+  background-color:#ffffff;
+  padding: 10px;
+}
+
+.form-part{
+  margin:10px 50px;
+  padding: 10px 50px;
+  border: #000000 solid 1px;
+}
+
+
+/* forms */
+
+input, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+.remember_me{
+
+  width: 20px;
+  margin-bottom: 15px;
+
+}
+
+.regsuccess-msg{
+ font-size: 20px;
+ padding: 20px 50px 200px 50px;
+}
+.regsuccess-msg p{
+margin-bottom: 50px;
+}
+.regsuccess-msg .back-link{
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 1px solid #445588;
+}
+
+.back-link a{
+  text-decoration: none;
+}
+
+/* errors */
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
