@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130194809) do
+ActiveRecord::Schema.define(version: 20131130194850) do
 
   create_table "anonymous_users", force: true do |t|
     t.string   "email",      limit: 30
@@ -68,12 +68,15 @@ ActiveRecord::Schema.define(version: 20131130194809) do
 
   create_table "users", force: true do |t|
     t.string   "email"
-    t.string   "password",          limit: 16
+    t.string   "password_digest",   limit: 16
     t.boolean  "confirmed"
     t.boolean  "one_pager_allowed"
     t.boolean  "blocked"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token"
   end
+
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end
