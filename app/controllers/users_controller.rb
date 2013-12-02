@@ -22,8 +22,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
-      flash[:success] = 'Welcome! You information has saved. You will receive a confirmation email with secure link.
-                          After confirm you can access your account.'
+      #flash[:success] = 'Welcome! You information has saved. You will receive a confirmation email with secure link.
+      #                    After confirm you can access your account.'
 
       redirect_to action: 'registered'
 
