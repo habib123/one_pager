@@ -1,5 +1,11 @@
 class OnePagersController < ApplicationController
 
+	
+	def show
+		puts "Entered show"
+		@one_pager = OnePager.find(params[:id])
+	end
+
 	def new
 		puts "new start"
 		@one_pager = OnePager.new
@@ -18,19 +24,34 @@ class OnePagersController < ApplicationController
 
 	def create
 		puts "Create started"
-		if type_param[:report_type] == "patent"
+		@type = type_param[:type]
+		if @type == "patent"
 			puts "one_pager is patent"
 			@one_pager = OnePager.new(one_pager_patent_params)
-			if @one_pager.save
+
+			if @one_pager.valid?
+				@existing_one_pager = OnePager.get_patent_one_pager(@one_pager.single_patent_num)
+				if (!@existing_one_pager.nil?)
+					puts "one_pager exists"
+					redirect_to @existing_one_pager
+				else
+					if @one_pager.save
+						puts "one_pager saved"
+						# TODO : Success
+					else
+						puts "Cannot save one pager"
+						# TODO : Fail
+						render 'new'
+					end
+				end
 				puts "one_pager saved"
 				# TODO : Success
 			else
-				puts "Cannot save one pager"
+				puts "One pager is not valid"
 				# TODO : Fail
-				@type = "patent"
-				render 'new', {:type => @type}
+				render 'new'
 			end
-		elsif type_param[:report_type] == "portfolio"
+		elsif @type == "portfolio"
 			puts "one_pager is portfolio"
 			@one_pager = OnePager.new(one_pager_portfolio_params)
 			if @one_pager.save
@@ -39,10 +60,9 @@ class OnePagersController < ApplicationController
 			else
 				puts "Cannot save one pager"
 				# TODO : Fail
-				@type = "portfolio"
-				render 'new', {:type => @type}
+				render 'new'
 			end
-		elsif type_param[:report_type] == "patent_bulk"
+		elsif @type == "patent_bulk"
 			puts "one_pager is patent_bulk"
 			@one_pager = OnePager.new(one_pager_patent_bulk_params)
 			if @one_pager.save
@@ -51,10 +71,9 @@ class OnePagersController < ApplicationController
 			else
 				puts "Cannot save one pager"
 				# TODO : Fail
-				@type = "patent_bulk"
-				render 'new', {:type => @type}
+				render 'new'
 			end			
-		elsif type_param[:report_type] == "company_tags"
+		elsif @type == "company_tags"
 			puts "one_pager is company_tags"
 			@one_pager = OnePager.new(one_pager_company_tags_params)
 			if @one_pager.save
@@ -63,8 +82,7 @@ class OnePagersController < ApplicationController
 			else
 				puts "Cannot save one pager"
 				# TODO : Fail
-				@type = "company_tags"
-				render 'new', {:type => @type}
+				render 'new'
 			end					
 		end
 	end
@@ -72,23 +90,23 @@ class OnePagersController < ApplicationController
 	private
 
 		def one_pager_patent_params
-			params.require(:one_pager).permit(:patent_name, :single_patent_num, :email, :report_type)
+			params.require(:one_pager).permit(:patent_name, :single_patent_num, :email, :type)
 		end
 
 		def one_pager_portfolio_params
-			params.require(:one_pager).permit(:patent_name, :patent_list, :email, :report_type)
+			params.require(:one_pager).permit(:patent_name, :patent_list, :email, :type)
 		end
 
 		def one_pager_patent_bulk_params
-			params.require(:one_pager).permit(:patent_name, :patent_list, :email, :report_type)
+			params.require(:one_pager).permit(:patent_name, :patent_list, :email, :type)
 		end		
 
 		def one_pager_company_tags_params
-			params.require(:one_pager).permit(:patent_name, :company_name, :tags_list, :email, :report_type)
+			params.require(:one_pager).permit(:patent_name, :company_name, :tags_list, :email, :type)
 		end
 
 		def type_param
-			params.require(:one_pager).permit(:report_type)
+			params.require(:one_pager).permit(:type)
 		end
 
 end

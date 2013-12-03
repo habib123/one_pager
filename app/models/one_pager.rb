@@ -4,6 +4,7 @@ class OnePager < ActiveRecord::Base
   belongs_to :mig_users
   belongs_to :users
   belongs_to :user_favorites
+  self.inheritance_column = nil
 	
 	validates :patent_name, presence: true
 
@@ -23,22 +24,26 @@ class OnePager < ActiveRecord::Base
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
 
-	attr_accessor :email , :patent_list , :report_type , :tags_list
+	attr_accessor :email , :patent_list , :tags_list
 
 	def should_validate_single_patent_num?
-		report_type == "patent"
+		type == "patent"
 	end
 
 	def should_validate_patent_list?
-		report_type == "portfolio" || report_type == "patent_bulk"
+		type == "portfolio" || type == "patent_bulk"
 	end	
 
 	def should_validate_tags_list?
-		report_type == "company_tags"
+		type == "company_tags"
 	end
 
 	def should_validate_company_name?
-		report_type == "company_tags"
+		type == "company_tags"
+	end
+
+	def self.get_patent_one_pager(patent_number)
+		OnePager.find_by_single_patent_num(patent_number)
 	end
 
 end
