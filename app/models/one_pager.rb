@@ -46,4 +46,7 @@ class OnePager < ActiveRecord::Base
 		OnePager.find_by_single_patent_num(patent_number)
 	end
 
+	def self.get_portfolio_one_pager(patent_list)
+	end
+
 end

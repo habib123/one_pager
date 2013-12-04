@@ -44,24 +44,36 @@ class OnePagersController < ApplicationController
 						render 'new'
 					end
 				end
-				puts "one_pager saved"
-				# TODO : Success
 			else
 				puts "One pager is not valid"
 				# TODO : Fail
 				render 'new'
 			end
+
 		elsif @type == "portfolio"
 			puts "one_pager is portfolio"
 			@one_pager = OnePager.new(one_pager_portfolio_params)
-			if @one_pager.save
-				puts "one_pager saved"
-				# TODO : Success
+			if @one_pager.valid?
+				@existing_one_pager = OnePager.get_portfolio_one_pager(@one_pager.patent_list)
+				if (!@existing_one_pager.nil?)
+					puts "one_pager exists"
+					redirect_to @existing_one_pager
+				else
+					if @one_pager.save
+						puts "one_pager saved"
+						# TODO : Success
+					else
+						puts "Cannot save one pager"
+						# TODO : Fail
+						render 'new'
+					end
+				end
 			else
-				puts "Cannot save one pager"
+				puts "One pager is not valid"
 				# TODO : Fail
 				render 'new'
 			end
+
 		elsif @type == "patent_bulk"
 			puts "one_pager is patent_bulk"
 			@one_pager = OnePager.new(one_pager_patent_bulk_params)
