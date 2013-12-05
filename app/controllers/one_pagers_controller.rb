@@ -101,14 +101,26 @@ class OnePagersController < ApplicationController
 		elsif @type == "company_tags"
 			puts "one_pager is company_tags"
 			@one_pager = OnePager.new(one_pager_company_tags_params)
-			if @one_pager.save
-				puts "one_pager saved"
-				# TODO : Success
+			if @one_pager.valid?
+				@existing_one_pager = OnePager.get_company_tags_one_pager(@one_pager.tags_list,@one_pager.company_name)
+				if (!@existing_one_pager.nil?)
+					puts "one_pager exists"
+					redirect_to @existing_one_pager
+				else
+					if @one_pager.save
+						puts "one_pager saved"
+						# TODO : Success
+					else
+						puts "Cannot save one pager"
+						# TODO : Fail
+						render 'new'
+					end
+				end
 			else
-				puts "Cannot save one pager"
+				puts "One pager is not valid"
 				# TODO : Fail
 				render 'new'
-			end					
+			end							
 		end
 	end
 

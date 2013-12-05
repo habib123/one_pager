@@ -46,12 +46,12 @@ class OnePager < ActiveRecord::Base
 		OnePager.find_by_single_patent_num(patent_number)
 	end
 
-	def self.get_portfolio_one_pager(patent_list)
-		patent_array = patent_list.split(/[^\w-]+/)
-		patent_array.sort!
-		patent_list = patent_array.join(',')
+	def self.get_portfolio_one_pager(patents_list)
+		patents_array = patents_list.split(/[^\w-]+/)
+		patents_array.sort!
+		patents_list = patents_array.join(',')
 		one_pager_id = OnePagersPatentNum.group("one_pager_id").
-						having("GROUP_CONCAT(patent_num ORDER BY patent_num ASC SEPARATOR ',') = ?",patent_list).
+						having("GROUP_CONCAT(patent_num ORDER BY patent_num ASC SEPARATOR ',') = ?",patents_list).
 						order(created_at: :desc).
 						pluck(:one_pager_id).
 						first
@@ -64,16 +64,33 @@ class OnePager < ActiveRecord::Base
 
 	end
 
-	def self.get_patent_bulk_one_pager(patent_list)
-		patent_array = patent_list.split(/[^\w-]+/)
-		patent_array.sort!
-		patent_list = patent_array.join(',')
+	def self.get_patent_bulk_one_pager(patents_list)
+		patents_array = patents_list.split(/[^\w-]+/)
+		patents_array.sort!
+		patents_list = patents_array.join(',')
 		one_pager_id = OnePagersPatentNum.group("one_pager_id").
-						having("GROUP_CONCAT(patent_num ORDER BY patent_num ASC SEPARATOR ',') = ?",patent_list).
+						having("GROUP_CONCAT(patent_num ORDER BY patent_num ASC SEPARATOR ',') = ?",patents_list).
 						order(created_at: :desc).
 						pluck(:one_pager_id).
 						first
 		puts one_pager_id
+		if (one_pager_id.nil?)
+			nil
+		else
+			OnePager.find(one_pager_id)
+		end
+
+	end
+
+	def self.get_company_tags_one_pager(tags_list,company_name)
+		tags_array = tags_list.split(/[^\w-]+/)
+		tags_array.sort!
+		tags_list = tags_array.join(',')
+		ids = OnePagersTag.group("one_pager_id").
+						having("GROUP_CONCAT(tag ORDER BY tag ASC SEPARATOR ',') = ?",tags_list).
+						order(created_at: :desc).
+						pluck(:one_pager_id)
+		one_pager_id = OnePager.where("company_name = ? ", company_name).where(id: ids).pluck(:id).first
 		if (one_pager_id.nil?)
 			nil
 		else
