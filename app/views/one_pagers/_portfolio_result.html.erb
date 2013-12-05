@@ -1,0 +1,29 @@
+<table class="table table-striped">
+	<tr>
+	<td style="width:100px"><b>Name</b></td>
+	<td><%=@one_pager.patent_name%></td>
+	</tr>
+	
+	<tr>
+	<td><b>Status</b></td>
+	<% if (@one_pager.mig_status == "Approved") %>
+	<td style = "color:green"><%=@one_pager.mig_status%></td>
+	<% else %>
+	<td style = "color:orange"><%=@one_pager.mig_status%></td>
+	<% end %>
+	</tr>
+
+	<tr>
+	<td><b>Type</b></td>
+	<td>Portfolio</td>
+	</tr>
+
+	<tr>
+	<td><b>Patents</b></td>
+	<td><%= OnePagersPatentNum.get_patent_list(@one_pager.id)%></td>
+	</tr>
+
+</table>
+
+<%= link_to 'View as HTML' , @one_pager.html_link %> <br>
+<%= link_to 'Download pdf' , @one_pager.pdf_link %>

@@ -47,6 +47,21 @@ class OnePager < ActiveRecord::Base
 	end
 
 	def self.get_portfolio_one_pager(patent_list)
+		patent_array = patent_list.split(/[^\w-]+/)
+		patent_array.sort!
+		patent_list = patent_array.join(',')
+		one_pager_id = OnePagersPatentNum.group("one_pager_id").
+						having("GROUP_CONCAT(patent_num ORDER BY patent_num ASC SEPARATOR ',') = ?",patent_list).
+						order(created_at: :desc).
+						pluck(:one_pager_id).
+						first
+		puts one_pager_id
+		if (one_pager_id.nil?)
+			nil
+		else
+			OnePager.find(one_pager_id)
+		end
+
 	end
 
 end
