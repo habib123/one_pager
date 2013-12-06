@@ -24,7 +24,7 @@ class OnePager < ActiveRecord::Base
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
 
-	attr_accessor :email , :patent_list , :tags_list
+	attr_accessor :email , :patent_list , :tags_list , :user_exists
 
 	def should_validate_single_patent_num?
 		type == "patent"
@@ -96,7 +96,6 @@ class OnePager < ActiveRecord::Base
 		else
 			OnePager.find(one_pager_id)
 		end
-
 	end	
 
 end

@@ -21,6 +21,17 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
+  def updateUserCounter
+  end
+
+  def allowedToCreateOnePager?
+    if (self.blocked || !self.one_pager_allowed)
+      false
+    else
+      true
+    end
+  end  
+
   private
 
   def create_remember_token
