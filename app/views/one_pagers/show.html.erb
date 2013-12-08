@@ -10,5 +10,38 @@
          </div>
        </div>
    </div>
+  <p style="color: lightskyblue;">One Pager Results</p>
+  <% if (@one_pager.mig_status == "Approved") %>
+  <p>Your report is ready for download! We have also sent you the links via e-mail in case you want to donwload it later.
+    As a registered user, you can also see previous reports in <%= link_to 'account management', '#'%>.</p>
+  <% else %>
+  <p>The requested report must be approved by the Munich Innovation Group in order to be generated. This should take no longer than 24 hours.
+    We will e-mail you once it has been approved and generated with the download links.
+    As a registered user, you can also check the status of your request in <%= link_to 'account management', '#'%>.</p>
+  <% end %>
+
+  
+
   <%= render @one_pager.type + "_result" %>
+  
+  <% if (@one_pager.mig_status == "Approved") %>
+  
+  <table class="linksTable">
+  <tr>
+  <td class="first"><p><%= link_to 'View as HTML' , @one_pager.html_link %></p></td>
+  <td class="last" ><p><%= link_to 'Download pdf' , @one_pager.pdf_link %></p></td>
+  </tr>
+  </table>
+  <br>
+  <% end %>
+
+
+
+  <div align="right">
+    <h3><%= link_to 'Finish' , '#'%></h3>
+  </div>
+
+  
+
+
 </div>

@@ -44,3 +44,19 @@ label {
     float:left;
     padding:3px;
 }
+
+.linksTable {
+  width:700px; margin:0 auto;
+}
+
+.linksTable td {
+  width:350px;
+}
+
+.linksTable .first {
+  text-align:left;
+}
+
+.linksTable .last {
+  text-align:right;
+}

@@ -1,4 +1,4 @@
-<div class="search-wrapper">
+<div class="one_pagers-wrapper">
 	
 	<div class="progbar navbar">
        <div class="navbar-inner" style="padding: 0;">
@@ -12,25 +12,27 @@
        </div>
      </div>
 
-<div class ="container">
-<p style="color: lightskyblue;">Please select the report you wish to generate</p>
+  <div class ="container">
+    <p style="color: lightskyblue;">Please select the report you wish to generate</p>
 
-  <div class="span2">
-  	<div class="btn-group-vertical" data-toggle="buttons-radio">
-    <button id = "b1" type="button" class="btn btn-default" checked>Patent</button>
-    <button id = "b2" type="button" class="btn btn-default">Company Tags</button>
-    <button id = "b3" type="button" class="btn btn-default">Portfolio</button>
-    <button id = "b4" type="button" class="btn btn-default">Patent Bulk</button>
+    <div class="span2">
+    	<div class="btn-group-vertical" data-toggle="buttons-radio">
+      <button id = "b1" type="button" class="btn btn-default" checked>Patent</button>
+      <button id = "b2" type="button" class="btn btn-default">Company Tags</button>
+      <button id = "b3" type="button" class="btn btn-default">Portfolio</button>
+      <button id = "b4" type="button" class="btn btn-default">Patent Bulk</button>
+    </div>
+    </div>
+    <div class="span2">
+    	<img id="descImg" src="/Crystal_Clear.png">
+    </div>
+    <div class="span4">
+    	<p id="descText"> test test </p>
+    </div>
   </div>
+  <div align="right">
+      <%= link_to 'Continue to step number 2' , '/one_pagers/new?report=patent',id:"linkToType" %>
   </div>
-  <div class="span2">
-  	<img id="descImg" src="/Crystal_Clear.png">
-  </div>
-  <div class="span4">
-  	<p id="descText"> test test </p>
-  </div>
-</div align="right">
-  <%= link_to 'Continue to step number 2' , '/one_pagers/new?report=patent',id:"linkToType" %>
 </div>
 
 
