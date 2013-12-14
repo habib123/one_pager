@@ -20,29 +20,33 @@
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 50%;
-  margin-bottom: 15px;
+.one_pagers-wrapper {
 
-}
+      input,  , select, .uneditable-input {
+        border: 1px solid #bbb;
+        width: 50%;
+        margin-bottom: 15px;
 
-input {
-  	height:20px;
-    width:220px;
-    padding:5px 8px;
-}
+      }
 
-textarea {
-    width:220px;
-}
+      input {
+        	height:20px;
+          width:220px;
+          padding:5px 8px;
+      }
 
-label {
- 	width:150px;
-    margin-top: 3px;
-    display:inline-block;
-    float:left;
-    padding:3px;
+      input, textarea {
+          width:220px;
+      }
+
+      label {
+       	width:150px;
+          margin-top: 3px;
+          display:inline-block;
+          float:left;
+          padding:3px;
+      }
+
 }
 
 .linksTable {
