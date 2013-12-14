@@ -1,6 +1,6 @@
 <div class="search-wrapper">
 <h3 style="color: lightskyblue;">Search Reports</h3>	
-<form class="form-horizontal" role="form">
+<form class="form-horizontal" role="form" action="search_result">
 	<p><b>Please enter the search filters in the following area</b> <i>(one per row):</i>
 	</p>
 	<div class="left">
@@ -8,16 +8,16 @@
 	</div>
 	<div class="left search-category checkbox">
 	  	<label>
-	  		<input type="checkbox" name="vehicle" value="patents">Patents
+	  		<input type="checkbox" name="criteria[]" value="Patent">Patents
 		</label><br />
 		<label>
-			<input type="checkbox" name="vehicle" value="portfolios">Portfolios
+			<input type="checkbox" name="criteria[]" value="Portfolio">Portfolios
 		</label><br />
 		<label>
-			<input type="checkbox" name="vehicle" value="companies">Companies
+			<input type="checkbox" name="criteria[]" value="Company">Companies
 		</label><br />
 		<label>
-			<input type="checkbox" name="vehicle" value="bulks">Bulks 
+			<input type="checkbox" name="criteria[]" value="Bulk">Bulks 
 		</label><br />
 		<button type="submit" class="btn btn-default search-button" name="search">Search</button>
 	</div>

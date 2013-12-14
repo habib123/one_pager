@@ -7,7 +7,7 @@
       <tr>
         <th>Type</th>
         <th>Name</th>
-        <th>Patent Numbers - Company Tags</th>
+        <th>Patent Numbers</th>
         <th>Date added</th>
         <th>HTML</th>
         <th>PDF</th>
@@ -15,33 +15,18 @@
       </tr>
     </thead>
     <tbody>
+   	  <% @result.each do |patent|%>	 	
       <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Mark</td>
-        <td>Otto</td>
+        <td><%= patent.type %></td>
+        <td><%= patent.patent_name %></td>
+        <td><%= patent.single_patent_num %></td>
+        <td><%= patent.created_at %></td>
+        <td><%= patent.html_link %></td>
+        <td><%= patent.pdf_link %></td>
         <td style="text-align: center;"><img src="/Crystal_Clear.png" height="15" width="15"></td>
       </tr>
-      <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td style="text-align: center;"><img src="/Crystal_Clear.png" height="15" width="15"></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td style="text-align: center;"><img src="/free-vector-icon-star-clip-art_117085_Icon_Star_clip_art_hight.png" height="15" width="15"></td>
-      </tr>
+      <% end %>
     </tbody>
   </table>
+  <%= paginate @result %>
 </div>
