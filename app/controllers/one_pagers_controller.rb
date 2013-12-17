@@ -1,5 +1,6 @@
 class OnePagersController < ApplicationController
 
+	MIG_EMAIL = "munichinnovationgmbh@gmail.com"
 	
 	def show
 		puts "Entered show"
@@ -58,6 +59,7 @@ class OnePagersController < ApplicationController
 						if @one_pager.save
 							puts "one_pager saved"
 							user.updateUserCounter
+							MigMailer.new_one_pager(MIG_EMAIL,request.host_with_port,@one_pager.id.to_s).deliver
 							redirect_to @one_pager
 						else
 							puts "Cannot save one pager"
@@ -91,6 +93,8 @@ class OnePagersController < ApplicationController
 						if @one_pager.save
 							save_patent_list(@one_pager.patent_list,@one_pager.id)
 							puts "one_pager saved"
+							user.updateUserCounter
+							MigMailer.new_one_pager(MIG_EMAIL,request.host_with_port,@one_pager.id.to_s).deliver
 							redirect_to @one_pager
 						else
 							puts "Cannot save one pager"
@@ -124,6 +128,8 @@ class OnePagersController < ApplicationController
 						if @one_pager.save
 							save_patent_list(@one_pager.patent_list,@one_pager.id)
 							puts "one_pager saved"
+							user.updateUserCounter
+							MigMailer.new_one_pager(MIG_EMAIL,request.host_with_port,@one_pager.id.to_s).deliver
 							redirect_to @one_pager
 						else
 							puts "Cannot save one pager"
@@ -155,6 +161,8 @@ class OnePagersController < ApplicationController
 						@one_pager.created_status = false
 						if @one_pager.save
 							puts "one_pager saved"
+							user.updateUserCounter
+							MigMailer.new_one_pager(MIG_EMAIL,request.host_with_port,@one_pager.id.to_s).deliver
 							save_tags_list(@one_pager.tags_list,@one_pager.id)
 							redirect_to @one_pager
 						else
