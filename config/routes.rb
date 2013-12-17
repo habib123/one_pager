@@ -1,5 +1,6 @@
 OnePagerApp::Application.routes.draw do
   
+ 
   resources :one_pagers
 
   get "search/search"
@@ -21,6 +22,11 @@ OnePagerApp::Application.routes.draw do
   match '/signin',  to: 'sessions#new',     via: 'get'
   match '/signup',  to: 'users#register',   via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+
+  # Habib added mig_user controller related route 
+  resources :mig_users
+  match '/mig_signup',  to: 'mig_users#new', via: 'get'
+  
   
   # Moinul added APItest controller related route -27-11-2013
   resources :apitest

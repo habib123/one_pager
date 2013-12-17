@@ -1,0 +1,2 @@
+class MigSessionsController < ApplicationController
+end

@@ -1,0 +1,30 @@
+<div class="user-layout">
+  <div>
+   
+    <span class="topmenu highlight">Mig User Registration </span>
+  </div>
+  <div class="body-part">
+    <div class="title-top">
+        <span class="title"> Mig User Create </span>
+    </div>
+    <div class="middle-part">
+        <p>If you wish to create an account, <a href="/signup"> click here </a></p>
+
+        <div class="form-part">
+            <%= form_for(@mig_user) do |f| %>
+	      <%= render 'shared/mig_error_messages' %>
+              <p>
+                 <%= f.label :email %>
+                 <%= f.text_field :email %>
+               </p>
+               <p>
+                 <%= f.label :password %>
+                 <span><%= f.password_field :password %></span>
+               </p>
+             
+               <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+            <% end %>
+        </div>
+    </div>
+  </div>
+</div>

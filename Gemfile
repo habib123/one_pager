@@ -45,6 +45,11 @@ gem 'bootstrap-sass', '2.3.2.0'
 # Use Heroku gems
 gem 'rails_12factor', group: :production
 
+group :test do
+  gem 'factory_girl_rails', '4.2.1'
+end
+
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 

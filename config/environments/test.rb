@@ -23,6 +23,9 @@ OnePagerApp::Application.configure do
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
 
+  # Speed up tests by lowering bcrypt's cost function.
+  ActiveModel::SecurePassword.min_cost = true
+
   # Disable request forgery protection in test environment.
   config.action_controller.allow_forgery_protection = false
 
