@@ -22,13 +22,13 @@ class SearchController < ApplicationController
         type_search_result_by_name = type_search_result_by_name + result_by_tag_main
         result_array = result_array + type_search_result_by_name 
         @result = result_array.uniq {|p| p.id}
-        @result = Kaminari.paginate_array(@result).page(params[:page]).per(5) 
+        @result = Kaminari.paginate_array(@result).page(params[:page]).per(10) 
       end
     else
       type_search_result_by_name = OnePager.where(type: search_criteria)
       result_array = type_search_result_by_name
       @result = result_array.uniq {|p| p.id}
-      @result = @result.page(params[:page]).per(5)
+      @result = @result.page(params[:page]).per(10)
     end  
     
   end

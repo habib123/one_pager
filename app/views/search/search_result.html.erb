@@ -21,8 +21,8 @@
         <td><%= patent.patent_name %></td>
         <td><%= patent.single_patent_num %></td>
         <td><%= patent.created_at %></td>
-        <td><%= patent.html_link %></td>
-        <td><%= patent.pdf_link %></td>
+        <td><a href="<%= patent.html_link %>" target="_blank">Download HTML Version</a></td>
+        <td><a href="<%= patent.pdf_link %>" target="_blank">Download PDF Version</a></td>
         <td style="text-align: center;"><img src="/Crystal_Clear.png" height="15" width="15"></td>
       </tr>
       <% end %>
