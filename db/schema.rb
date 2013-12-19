@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131217143600) do
+ActiveRecord::Schema.define(version: 20131219004229) do
 
   create_table "anonymous_users", force: true do |t|
     t.string   "email",      limit: 30
@@ -21,13 +21,16 @@ ActiveRecord::Schema.define(version: 20131217143600) do
   end
 
   create_table "mig_users", force: true do |t|
-    t.string   "email",      limit: 30
-    t.string   "password",   limit: 16
+    t.string   "email",           limit: 30
+    t.string   "password",        limit: 16
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token"
+    t.string   "password_digest"
   end
 
   add_index "mig_users", ["email"], name: "index_mig_users_on_email", unique: true, using: :btree
+  add_index "mig_users", ["remember_token"], name: "index_mig_users_on_remember_token", using: :btree
 
   create_table "one_pagers", force: true do |t|
     t.integer  "user_id"

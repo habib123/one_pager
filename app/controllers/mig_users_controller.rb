@@ -21,7 +21,7 @@ class MigUsersController < ApplicationController
   private
 
     def mig_user_params
-      params.require(:mig_user).permit(:email, :password)
+      params.require(:mig_user).permit(:email, :password ,:password_confirmation)
     end
 
 end

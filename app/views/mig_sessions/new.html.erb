@@ -1,0 +1,29 @@
+<div class="user-layout">
+
+  <div class="body-part">
+    <div class="title-top">
+        <span class="title"> MIG Log In </span>
+    </div>
+    <div class="middle-part">
+        <p>If you wish to create an account, <a href="/mig_signup"> click here </a></p>
+
+        <div class="form-part">
+            <%= form_for(:mig_session, url: mig_sessions_path) do |f| %>
+              <% flash.each do |key, value| %>
+                  <div class="alert alert-<%= key %>"><%= value %></div>
+              <% end %>
+              <p>
+                 <%= f.label :email %>
+                 <%= f.text_field :email %>
+               </p>
+               <p>
+                 <%= f.label :password %>
+                 <span><%= f.password_field :password %></span>
+               </p>
+               <p><input type="checkbox" name="remember_me" class="remember_me">  Remember me</p>
+                <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+            <% end %>
+        </div>
+    </div>
+  </div>
+</div>

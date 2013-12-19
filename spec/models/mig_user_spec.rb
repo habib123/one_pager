@@ -4,20 +4,33 @@ describe MigUser do
 
 
   before do
-    @mig_user = MigUser.new(password:"foo", email: "user@example.com")
+    @mig_user = MigUser.new(email:"user@example.com", password: "foobar", password_confirmation: "foobar")
   end
 
   subject { @mig_user }
 
-  it { should respond_to(:password) }
+ 
   it { should respond_to(:email) }
+  it { should respond_to(:password_digest) }
+  it { should respond_to(:password) }
+  it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) }
+  it { should respond_to(:authenticate) }
 
   it { should be_valid }
 
   describe "when password is not present" do
-    before { @mig_user.password = " " }
+    before do
+       @mig_user = MigUser.new( email: "user@example.com",
+                     password: " ", password_confirmation: " ")
+         end
+  it { should_not be_valid }
+  end
+  describe "when password doesn't match confirmation" do
+    before { @mig_user.password_confirmation = "mismatch" }
     it { should_not be_valid }
   end
+
   describe "when email is not present" do
     before { @mig_user.email = " " }
     it { should_not be_valid }
@@ -51,6 +64,11 @@ describe MigUser do
     end
 
     it { should_not be_valid }
+  end
+
+  describe "remember token" do
+    before { @mig_user.save }
+    its(:remember_token) { should_not be_blank }
   end
 
 end

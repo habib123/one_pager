@@ -28,13 +28,12 @@ describe "Mig_User pages" do
         #fill_in "Name",         with: "Example User"
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"
-        #fill_in "Confirmation", with: "foobar"
+        fill_in "Confirmation", with: "foobar"
+	 it "should create a user" do
+	    expect { click_button submit }.to change(MigUser, :count).by(1)
+	 end
       end
+    end #with valid information
+  end# mig sign up page
 
-      it "should create a user" do
-        expect { click_button submit }.to change(MigUser, :count).by(1)
-      end
-    end
-  end
-
-end
+end#Mig_User pages

@@ -21,6 +21,10 @@
                  <%= f.label :password %>
                  <span><%= f.password_field :password %></span>
                </p>
+               <p>
+                 <%= f.label :password_confirmation, "Confirmation" %>
+                 <%= f.password_field :password_confirmation %>
+               </p>
              
                <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
             <% end %>

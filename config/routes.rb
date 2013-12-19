@@ -26,6 +26,11 @@ OnePagerApp::Application.routes.draw do
   # Habib added mig_user controller related route 
   resources :mig_users
   match '/mig_signup',  to: 'mig_users#new', via: 'get'
+
+  # Habib added Mig_Sessions controller related route
+  resources :mig_sessions, only: [:new, :create, :destroy]
+  match '/mig_signin',  to: 'mig_sessions#new',         via: 'get'
+  match '/mig_signout', to: 'mig_sessions#destroy',     via: 'delete'
   
   
   # Moinul added APItest controller related route -27-11-2013
