@@ -98,4 +98,9 @@ class OnePager < ActiveRecord::Base
 		end
 	end	
 
+	def self.updateLinks(id,html_link,pdf_link,img_link)
+		one_pager = OnePager.find(id)
+		user.update(html_link: html_link , pdf_link: pdf_link , img_link:img_link)
+	end
+
 end
