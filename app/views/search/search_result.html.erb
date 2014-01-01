@@ -1,8 +1,11 @@
+<%= stylesheet_link_tag "style.css" %>
+<%= javascript_include_tag "jquery-latest.js" %>
+<%= javascript_include_tag "jquery.tablesorter.min.js" %>
 <div class="search-wrapper">
 <h3 style="color: lightskyblue;">Search Reports</h3>	
 <p style="float: right;">If you are not happy with the results, you can always <a href="/search/search">search again</a>.
 </p>
-<table class="table table-striped">
+<table class="table table-striped tablesorter" id="table-sorter">
     <thead>
       <tr>
         <th>Type</th>
@@ -30,3 +33,11 @@
   </table>
   <%= paginate @result %>
 </div>
+
+<script>
+	$(document).ready(function() 
+	    { 
+	        $("#table-sorter").tablesorter({sortList: [[0,0]], headers: { 4:{sorter: false}, 5:{sorter: false}, 6:{sorter: false}}}); 
+	    } 
+	); 
+</script>
