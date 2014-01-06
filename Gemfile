@@ -69,3 +69,5 @@ gem 'rest-client'
 
 #gem for postgresql for heroku
 gem  'pg'
+
+gem 'actionmailer'
