@@ -1,0 +1,65 @@
+
+<div class="row">
+  sucess,,,,,,,,,,,,,
+      
+<% if mig_signed_in? %>
+<div class="user-layout">
+  <div class="body-part">
+	    <div class="title-top">
+		<span class="title"> Mig Approval</span>
+	    </div>
+    <div class="middle-part">
+        <p style = "color:blue"> Patent Report Request :  <a href="/mig_signup"> Sign Up </a> <%= link_to "Sign out", mig_signout_path, method: "delete" %></p>
+<div class="row">
+  <div class="span6">
+<table class="table table-striped"  >
+	<tr>
+	<td style="width:100px"><b>Name</b></td>
+	<td><%=@one_pager.patent_name%></td>
+	</tr>
+	
+	<tr>
+	<td><b>Status</b></td>
+	<% if (@one_pager.mig_status == "Approved") %>
+	<td style = "color:green"><%=@one_pager.mig_status%></td>
+	<% else %>
+	<td style = "color:orange"><%=@one_pager.mig_status%></td>
+	<% end %>
+	</tr>
+
+	<tr>
+	<td><b>Type</b></td>
+	<td><%=@one_pager.type%></td>
+	</tr>
+
+	<tr>
+	<td><b>Patent</b></td>
+	<td><%= OnePagersPatentNum.get_patent_list(@one_pager.id)%></td>
+	</tr>
+
+</table> 
+
+ <div class="span1 offset1">
+    <%= form_for(@one_pager) do |f| %>
+     <% flash.each do |key, value| %>
+    	<div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+
+      <%= f.label :comments %>
+      <%= f.text_field :comments %>
+
+ 
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+ </div>
+
+</div>
+  </div>
+
+    </div>
+  </div>
+ <% else %>
+   <p>Sorry! you are not MIG Signed User</p>
+ <% end %>
+</div>

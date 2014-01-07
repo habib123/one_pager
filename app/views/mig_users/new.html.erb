@@ -1,5 +1,6 @@
 <div class="user-layout">
-  <div>
+<% if mig_signed_in? %>
+<div>
    
     <span class="topmenu highlight">Mig User Registration </span>
   </div>
@@ -8,7 +9,7 @@
         <span class="title"> Mig User Create </span>
     </div>
     <div class="middle-part">
-        <p>If you wish to create an account, <a href="/signup"> click here </a></p>
+        <p> <a href="/mig_signup">Back </a></p>
 
         <div class="form-part">
             <%= form_for(@mig_user) do |f| %>
@@ -31,4 +32,7 @@
         </div>
     </div>
   </div>
+ <% else %>
+   <p>Sorry! you are not MIG Signed User</p>
+ <% end %>
 </div>

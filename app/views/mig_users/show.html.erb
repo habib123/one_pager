@@ -1,11 +1,29 @@
 
 <div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= gravatar_for @mig_user %>
-        <%= @mig_user.email %>
-      </h1>
-    </section>
-  </aside>
+  
+
+ <%= @mig_user.email %>hjuSHOW of MIG USER
+      
+<% if mig_signed_in? %>
+<div class="user-layout">
+  <div class="body-part">
+	    <div class="title-top">
+		<span class="title"> Mig Approval</span>
+	    </div>
+    <div class="middle-part">
+        <p style = "color:blue"> Patent Report Request :  <a href="/mig_signup"> Sign Up </a> <%= link_to "Sign out", mig_signout_path, method: "delete" %></p>
+<div class="row">
+  <div class="span6">
+
+
+
+
+</div>
+  </div>
+
+    </div>
+  </div>
+ <% else %>
+   <p>Sorry! you are not MIG Signed User</p>
+ <% end %>
 </div>

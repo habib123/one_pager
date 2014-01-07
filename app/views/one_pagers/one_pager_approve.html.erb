@@ -1,0 +1,51 @@
+
+<div class="row">
+  
+ onepager..........approved-------------------------------------------rough
+
+<div class="user-layout">
+  <div class="body-part">
+	    <div class="title-top">
+		<span class="title"> Mig Approval</span>
+	    </div>
+    <div class="middle-part">
+       <p style = "color:blue"> Patent Report Request :  <a href="/mig_signup"> Sign Up </a> 
+	<%= link_to 'Edit', edit_one_pager_path(@one_pager) %></p>
+<div class="row">
+  <div class="span6">
+<table class="table table-striped"  >
+	<tr>
+	<td style="width:100px"><b>Name</b></td>
+	<td><%=@one_pager.patent_name%></td>
+	</tr>
+	
+	<tr>
+	<td><b>Status</b></td>
+	<% if (@one_pager.mig_status == "Approve") %>
+	<td style = "color:green"><%=@one_pager.mig_status%></td>
+	<% else %>
+	<td style = "color:orange"><%=@one_pager.mig_status%></td>
+	<% end %>
+	</tr>
+
+	<tr>
+	<td><b>Type</b></td>
+	<td><%=@one_pager.type%></td>
+	</tr>
+
+	<tr>
+	<td><b>Patent</b></td>
+	<td><%= OnePagersPatentNum.get_patent_list(@one_pager.id)%></td>
+	</tr>
+
+</table> 
+
+
+
+</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>

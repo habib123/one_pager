@@ -2,7 +2,7 @@ class MigUsersController < ApplicationController
 
 
   def show
-    @mig_user = MigUser.find(params[:id])
+    @mig_user = MigUser.find(params[:id]) 
   end
 
   def new

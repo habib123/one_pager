@@ -23,15 +23,19 @@ OnePagerApp::Application.routes.draw do
   match '/signup',  to: 'users#register',   via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
-  # Habib added mig_user controller related route 
+  # Habib added mig_users controller related route 
   resources :mig_users
+  resources :mig_sessions, only: [:new, :create, :destroy]
   match '/mig_signup',  to: 'mig_users#new', via: 'get'
+ 
 
   # Habib added Mig_Sessions controller related route
   resources :mig_sessions, only: [:new, :create, :destroy]
   match '/mig_signin',  to: 'mig_sessions#new',         via: 'get'
   match '/mig_signout', to: 'mig_sessions#destroy',     via: 'delete'
-  
+  match '/one_pager_approve',  to: 'one_pagers#one_pager_approve',  via: 'get'
+  match '/mig_message/:id',  to: 'one_pagers#mig_message',  via: 'get'
+
   
   # Moinul added APItest controller related route -27-11-2013
   resources :apitest

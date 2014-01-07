@@ -1,0 +1,30 @@
+<div class="row">
+ <div class="user-layout">
+  <div class="body-part">
+	    <div class="title-top">
+		<span class="title"> MIG Approval</span>
+	    </div>
+    <div class="middle-part">
+	       <p style = "color:blue"> Patent Report Request :  <a href="/mig_signup"> Sign Up </a> 
+		<%= link_to "Sign out", mig_signout_path, method: "delete" %> </p>
+      <div class="row">
+	 <div class="span12 ">
+		<div class="row-fluid offset0">	   
+		  <div class="span4 "  style="padding-top: 15px;">
+		     	<p>The Report has been
+			<% if (@one_pager.mig_status == "Approve") %>
+				<t style = "color:green"><%=@one_pager.mig_status%></t>
+			<% else %>
+				<t style = "color:orange"><%=@one_pager.mig_status%></t>
+			</p>
+			<% end %>
+	           </div>	 
+	         </div>
+	    </div>
+         </div>
+     </div>
+   </div>
+  </div>
+ </div>
+</div>
+
