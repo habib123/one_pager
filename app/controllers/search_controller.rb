@@ -14,7 +14,9 @@ class SearchController < ApplicationController
       search_text_array.each do |search_text|
         type_search_result_by_name = OnePager.where(type: search_criteria).where("patent_name like ?", "%#{search_text}%")
       
-        by_tags = OnePagersTag.where(tag: search_text)
+        by_tags = OnePagersTag.where("tag like ?", "%#{search_text}%")
+        
+        #by_tags = OnePagersTag.where(tag: search_text)
         uniq_tag = by_tags.uniq {|p| p.one_pager_id}
         uniq_tag_patent_ids = uniq_tag.map(&:one_pager_id)
         result_by_tag_main = OnePager.find(uniq_tag_patent_ids)
