@@ -100,7 +100,39 @@ class OnePager < ActiveRecord::Base
 
 	def self.updateLinks(id,html_link,pdf_link,img_link)
 		one_pager = OnePager.find(id)
-		user.update(html_link: html_link , pdf_link: pdf_link , img_link:img_link)
+		one_pager.update_attribute(:html_link, html_link)
+		one_pager.update_attribute(:pdf_link, pdf_link)
+		one_pager.update_attribute(:img_link, img_link)
+	end
+
+	def self.updateOnePagerName(id,onePagerNewName)
+		one_pager = OnePager.find(id)
+		one_pager.update_attribute(:patent_name, onePagerNewName)
+	end
+
+	def self.updateOnePagerMigStatus(id,newStatus)
+		one_pager = OnePager.find(id)
+		one_pager.update_attribute(:mig_status, newStatus)
+	end
+
+	def self.updateOnePagerCreatedStatus(id,newStatus)
+		one_pager = OnePager.find(id)
+		one_pager.update_attribute(:created_status, newStatus)
+	end
+
+	def self.updateOnePagerEmailStatus(id,newStatus)
+		one_pager = OnePager.find(id)
+		one_pager.update_attribute(:email_status, newStatus)
+	end
+
+	def self.updateOnePagerComments(id,comments)
+		one_pager = OnePager.find(id)
+		one_pager.update_attribute(:comments, comments)
+	end
+
+	def self.updateOnePagerDate(id,date)
+		one_pager = OnePager.find(id)
+		one_pager.update_attribute(:date, date)
 	end
 
 end
