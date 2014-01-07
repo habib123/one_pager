@@ -1,0 +1,266 @@
+[33mcommit 656397461f4a84aa339be71291e81705c922025c[m
+Author: habib_tum <habib_tum@ymail.com>
+Date:   Tue Jan 7 22:40:02 2014 +0100
+
+    4C4D added
+
+[33mcommit e1029b28cf6f5eda16f18018cc65e9fd263b20c1[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Tue Jan 7 03:22:05 2014 -0800
+
+    GL2J feature is now implemented
+
+[33mcommit 97f533774b4b06bc783fd1d3ab81acc08b93ba86[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Mon Jan 6 12:40:32 2014 -0800
+
+    Modified Gemfile.lock updated
+
+[33mcommit eccff341b23fc6c34d3321f0239f1b2dc91601ca[m
+Merge: 1fb95ed a65bf03
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Mon Jan 6 12:34:45 2014 -0800
+
+    Merging GLIJK branch with master
+
+[33mcommit 1fb95ed0f45977ccf0a5df2f40ae608b5cf06544[m
+Author: zeesh_000 <zeeshan@ubuntu.(none)>
+Date:   Wed Jan 1 17:40:40 2014 +0100
+
+    Sorting functionality implemented.
+
+[33mcommit a65bf037c14facc4608129f25892c81df3532beb[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Fri Dec 20 04:15:59 2013 -0800
+
+    Added function to update link in the one_pager for GL2K-feature
+
+[33mcommit c41453c826086c174fa634d8ff6d993dace48aec[m
+Author: habib_tum <habib_tum@ymail.com>
+Date:   Thu Dec 19 22:47:31 2013 +0100
+
+    MIG_MODEL
+
+[33mcommit 51251bb1c1da8075720d8f606d538f554149c9f0[m
+Author: habib_tum <habib_tum@ymail.com>
+Date:   Thu Dec 19 20:23:15 2013 +0100
+
+    some recovery of moninu
+
+[33mcommit 5ff4fb025e4b91223b72c9bf128a1950e7a0e9b7[m
+Author: zeesh_000 <zeeshan@ubuntu.(none)>
+Date:   Wed Dec 18 23:41:39 2013 +0100
+
+    Search controller modified
+
+[33mcommit e910e803e6d01d4e06f5333dd0533c003e292a19[m
+Author: habib_tum <habib_tum@ymail.com>
+Date:   Wed Dec 18 00:56:52 2013 +0100
+
+    Mig_Model
+
+[33mcommit f1087e7293599db30815a95029df0e9eef056cf7[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Tue Dec 17 07:15:57 2013 -0800
+
+    Started working on GL2I-feature
+
+[33mcommit 58d137dffbaabca13c85d91bc8f11d2f04aea4a0[m
+Author: zeesh_000 <zeeshan@ubuntu.(none)>
+Date:   Sat Dec 14 12:38:22 2013 +0100
+
+    Search functionality with pagination implemented
+
+[33mcommit a63c98aee0a31b8af2d1ad502d3aad59e5aa5450[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Sat Dec 14 00:47:00 2013 -0800
+
+    Changed styling of the forms for the one-pager creation
+
+[33mcommit c04c5903d3de8fb97e513b75c0171ed65ad30053[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Sun Dec 8 05:52:09 2013 -0800
+
+    Added description texts for the last step
+
+[33mcommit 5ec625e085af289d7cdbe412c993e8e78db690a5[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Fri Dec 6 06:50:38 2013 -0800
+
+    Finished main implementation for feature GL2F
+
+[33mcommit 34f6d729fe651033c976c74dc308403693054557[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Thu Dec 5 15:07:54 2013 -0800
+
+    Finished implementation for company_tags One Pager
+
+[33mcommit 8fb5c1a029bea2bee4a423a68f0273477cad40f7[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Thu Dec 5 14:14:19 2013 -0800
+
+    Finished implementation for patent_bulk one_pager
+
+[33mcommit 1f9aeba1cc98926653972d1fa0fc387592a43b1c[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Thu Dec 5 12:15:38 2013 -0800
+
+    Finished implementation for portfolio one_pager
+
+[33mcommit 3c7ca4e9924e1b800bb48a7f57b441ed05a787b2[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Wed Dec 4 08:44:24 2013 -0800
+
+    Finished the patent type of one_pager
+
+[33mcommit 943dcf86d8363d8d6cf40d52954f78a23aa0e5c5[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Tue Dec 3 05:41:08 2013 -0800
+
+    Started working on the GL2G feature
+    The user can now see a one_pager of type patent if it exists already.
+    View is pending
+
+[33mcommit 4fbba51a5f52accc5b352163bdbbb5b7ca29fc66[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Mon Dec 2 09:21:51 2013 -0800
+
+    Added verification for patent number in patent report , user data transmitted if user is logged in
+
+[33mcommit 213bdcf9bf3bacd3f8380f28d042893f14742461[m
+Merge: b0e4297 5eb117d
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Mon Dec 2 06:26:53 2013 -0800
+
+    Merge branch 'GL2E-feature'
+
+[33mcommit b0e42970322a65f1611aad9b9c9fb2b7a39b750d[m
+Author: Moinul Al-Mamun <moinulkuet@gmail.com>
+Date:   Mon Dec 2 15:17:35 2013 +0100
+
+    account confirmed data check at login + text changes
+
+[33mcommit c63288e0fca32784e7432603270cadf72b5c6209[m
+Author: Moinul Al-Mamun <moinulkuet@gmail.com>
+Date:   Mon Dec 2 15:02:14 2013 +0100
+
+    remove signed_in method from users_helper
+    
+    It's implemented in SessionHelper
+
+[33mcommit 2346f9f51af6604a2cb493a79bef441c5c936256[m
+Author: Moinul Al-Mamun <moinulkuet@gmail.com>
+Date:   Mon Dec 2 14:34:32 2013 +0100
+
+    update db schema and add session helper
+
+[33mcommit 5eb117d8d0d58aed8a51b87d550674ed10677c5a[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Mon Dec 2 05:17:00 2013 -0800
+
+    Altered verification for tags-list and patent-numbers commas with spaces are allowed
+
+[33mcommit 2799bee461107b3d81c014c1d8272d47c8aa0d75[m
+Author: Moinul Al-Mamun <moinulkuet@gmail.com>
+Date:   Mon Dec 2 13:10:12 2013 +0100
+
+    rename db migrate file
+
+[33mcommit 7ca58172a5d74466a26c3ccf4e5e68f9d076f211[m
+Author: Moinul Al-Mamun <moinulkuet@gmail.com>
+Date:   Mon Dec 2 12:41:08 2013 +0100
+
+    fix ChangeUserFavoritesFieldName  class name
+
+[33mcommit 9464d064da6b1d16cb13f68a4b29af06512e0a5b[m
+Author: Moinul Al-Mamun <moinulkuet@gmail.com>
+Date:   Mon Dec 2 12:33:10 2013 +0100
+
+    Fix user_favorites data model
+    
+    On behalf of Zeeshan
+
+[33mcommit 5ea9127a961d6eedca3a08d452ff1e35a01db03b[m
+Author: Moinul Al-Mamun <moinulkuet@gmail.com>
+Date:   Mon Dec 2 10:51:55 2013 +0100
+
+    db file timestamp changes
+
+[33mcommit 730e12111bda7bd960261aaf93aaa9ad7503c119[m
+Author: Moinul Al-Mamun <moinulkuet@gmail.com>
+Date:   Mon Dec 2 10:39:33 2013 +0100
+
+    update login and registration view
+
+[33mcommit 8dfd7279b255312c62e0c779351794dc3941edd3[m
+Author: Moinul Al-Mamun <moinulkuet@gmail.com>
+Date:   Mon Dec 2 10:10:29 2013 +0100
+
+    bcrypt gem lock
+
+[33mcommit 45a0e6f955178e4a4dc0178a6416639a6670dea0[m
+Author: Moinul Al-Mamun <moinulkuet@gmail.com>
+Date:   Mon Dec 2 09:48:13 2013 +0100
+
+    add bcrypt in Gemfile.lock
+
+[33mcommit ab62d03437cad13617998c4cb15c5153737945d8[m
+Author: Moinul Al-Mamun <moinulkuet@gmail.com>
+Date:   Mon Dec 2 09:33:42 2013 +0100
+
+    add bcrypt-ruby gem
+    
+    To encrypt password
+
+[33mcommit 5028565412423123a5990cb5959bd45787ca0818[m
+Author: Moinul Al-Mamun <moinulkuet@gmail.com>
+Date:   Mon Dec 2 09:28:09 2013 +0100
+
+    User management 1st commit
+    
+    registration, login, session, remember me, success page, signed in
+    function, database migration files - 1st major commit
+    
+    backup previous user views.
+
+[33mcommit ad35ac4d7be90aeb6013be00d07bad028abfc3a6[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Sun Dec 1 03:49:25 2013 -0800
+
+    Added auto-completion feature for the Companies Tag using Twitter's typeahead
+    Modified tag's list validation
+    Removed repeated javascript code
+
+[33mcommit 354db0deadc2cb6a4d749ed456c1cf3463c84207[m
+Author: zeesh_000 <zeeshan@ubuntu.(none)>
+Date:   Sat Nov 30 21:13:35 2013 +0100
+
+    Associations between the data models
+
+[33mcommit b560a458d26b74c29228cabbe1cb1c2804af5dcd[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Fri Nov 29 14:51:44 2013 -0800
+
+    Fixed issue with patent numbers validation
+
+[33mcommit 6755459738167b9f20b2e8915832b20a3bf4e926[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Fri Nov 29 07:14:50 2013 -0800
+
+    Added verification for patent list
+    Added companies tags view and verification
+
+[33mcommit f2566c0d73a1b812b2b4084551f3949044320c69[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Thu Nov 28 16:02:25 2013 -0800
+
+    Added verification(not complete) for patent_list and single_patent_num form fields
+
+[33mcommit b278992c7ec6d8aa56bffaeedcc40acd384081df[m
+Author: stefanostam <stefanostam@gmail.com>
+Date:   Thu Nov 28 15:03:24 2013 -0800
+
+    Added view for portfolio and patent_bulk onepager
+
+[33mcommit fd2bc7c456fac4697e54de4953ae3dc2d6f0b38d[m
+Author: stefanostam <stefanos
