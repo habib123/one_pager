@@ -1,9 +1,9 @@
 class MigUserMailer < ActionMailer::Base
-  default from: "from@example.com"
+   default from: "munichinnovationgmbh@gmail.com"
+  ONEPAGER_HOST = 'http://one-pager-mig.herokuapp.com'
 
- def mig_notification_email(anonymous_user)
-    @anonymous_user = anonymous_user
-    @url  =  "<a href="http://localhost:3000/mig_signin">http://localhost:3000/mig_signin</a>"
-    mail(to: @anonymous_user.email, subject: 'Welcome to My Awesome Site')
+  def new_one_pager(mail,host,id)
+  	@url = 'http://' + host + Rails.application.routes.url_helpers.one_pagers_path + '/' + id
+  	mail(to:mail, subject: 'New One Pager Request')
   end
 end
