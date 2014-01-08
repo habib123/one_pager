@@ -212,9 +212,13 @@ class OnePagersController < ApplicationController
 
 	  #if  @one_pager.save
 	  if  @one_pager.update_attributes(onepager_approve_params)
-           	#flash[:success] = "Profile updatcdced"
-	   	# Tell the MigUserMailer to send a welcome Email after save
-           	MigUserMailer.mig_notification_email(@one_pager).deliver
+		  # Tell the MigUserMailer to send a notification Email to anonymous_user after save
+		  if params[:commit] == 'Approve'
+		    	MigUserMailer.mig_notification_email_approve(@one_pager.anonymous_user.email.to_s).deliver  
+		  elsif params[:commit] == 'Deny'
+		    	MigUserMailer.mig_notification_email_deny(@one_pager.anonymous_user.email.to_s).deliver  
+		  end
+           	
            	redirect_to :controller=>'one_pagers', :action => 'mig_message', :id => @one_pager.id
 	  else  
       	   	render :action => 'edit'
