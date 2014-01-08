@@ -3,6 +3,7 @@ class OnePager < ActiveRecord::Base
   has_one :one_pagers_patent_num
   belongs_to :mig_users
   belongs_to :users
+  belongs_to :anonymous_users
   belongs_to :user_favorites
   self.inheritance_column = nil
 	

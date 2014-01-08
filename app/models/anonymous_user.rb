@@ -1,4 +1,5 @@
 class AnonymousUser < ActiveRecord::Base
+  has_many :one_pagers
 
 	def updateUserCounter
 		self.update(counter: self.counter+=1)
